@@ -1,1 +1,16 @@
 // Mixins in here
+.buttons(@fontSize: 1.5rem, @fontColor: @white, @bgColor: @button-bg) {
+    font-size: @fontSize;
+    color: @fontColor;
+    background-color: @bgColor;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+  }
+  
+  .borderAnim() {
+    50% { border-radius: 50px; }
+    100% { border-radius: 10px; }
+  }
+  

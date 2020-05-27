@@ -1,3 +1,22 @@
+// Header
+.header {
+  display: block;
+  margin: 0 auto;
+  max-width: 790px;
+  width: 100%;
+  border-bottom: dashed 2px @navigation-border;
+
+  .header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header-text {
+      padding: 2rem 0 1rem;
+    }
+  }
+}
+
 .home {
 
   .content-section {
@@ -6,19 +25,40 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
     }
 
+    // Let's Go! - Media Query
+    @media @mobile {
+      flex-direction: column;
+      align-items: center;
+      padding-right: 0;
+
+      .text-content {
+        width: 90%;
+      }
+    }
+
+ 
+
     .img-content {
       width: 48%;
       padding-left: 1%;
+      border-radius:19rem;
+
+      // Let's Go! - Media Query
+      @media @mobile {
+        width: 90%;
+      }
 
       img {
         border-radius: 10px;
+
+        &:hover {
+          animation: anim 2s 1;
+        }
       }
     }
   }
@@ -30,6 +70,11 @@
     .text-content {
       padding-left: 1%;
       padding-right: 0;
+    }
+
+    // Adventure Awaits - Media Query
+    @media @mobile {
+      flex-direction: column-reverse;
     }
 
     .img-content {
@@ -44,6 +89,10 @@
 
     img {
       border-radius: 10px;
+
+      &:hover {
+        animation: anim 2s 1;
+      }
     }
   }
 
@@ -57,5 +106,50 @@
       width: 30%;
       margin-bottom: 30px;
     }
+
+    // Sign Me Up! - Media Query
+    @media @mobile {
+      flex-direction: column;
+      align-items: center;
+
+      .destination {
+        width: 90%;
+      }
+    }
   }
 }// home
+
+// Buttons
+.destination {
+  .btn {
+    .buttons();
+  }
+}
+
+
+// Base Media Query
+@media @tablet {
+  html {
+    font-size: 53%;
+
+    .header {
+      width: 100%;
+
+      @media @mobile {
+        width: 100%;
+      }
+    }
+
+    .home {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes anim {
+  .borderAnim;
+}
+
+img {
+  border-radius: 50%;
+}
